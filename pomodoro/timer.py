@@ -18,7 +18,7 @@ class Timer:
             if seconds >= 60:
                 minutes += 1
                 seconds = 0
-            print(f"{minute_duration} minute {title}  {minutes:02d}:{seconds:02d}")
+            print(f"{minute_duration} minute {title}  {minutes:02d}:{seconds:02d}", end="\r")
 
     def start_pomodoro(self):
         pomodoros = 0
@@ -27,7 +27,3 @@ class Timer:
             pomodoros += 1
             self.start_timer(self.short_break, "break")
         self.start_timer(self.long_break, "break")
-
-
-tomato = Timer()
-tomato.start_pomodoro()
